@@ -1,0 +1,10 @@
+{
+  "project": "foodtruck",
+  "task": "Investigate missing menu item images without changing checkout or deployment",
+  "checks": [
+    "Confirm image assets exist and match case-sensitive paths",
+    "Check Vite base path and image URLs",
+    "Run npm ci, npm run lint, and npm run build",
+    "Verify responsive menu rendering in a browser"
+  ]
+}
