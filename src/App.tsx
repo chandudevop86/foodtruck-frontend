@@ -252,17 +252,18 @@ function CustomerPage() {
   const [message, setMessage] = useState('')
   const [orderPopup, setOrderPopup] = useState('')
 
-  async function loadMenu() {
-    try {
-      const response = await fetch(`${API}/menu`)
+  useEffect(() => {
+    let cancelled = false
 
-      if (!response.ok) {
-        return
-      }
+    fetch(`${API}/menu`)
+      .then((response) =>
+        response.ok ? response.json() : null,
+      )
+      .then((data) => {
+        if (cancelled || !Array.isArray(data)) {
+          return
+        }
 
-      const data = await response.json()
-
-      if (Array.isArray(data)) {
         setMenu(
           INITIAL_MENU.map((item) => {
             const backendItem = data.find(
@@ -281,14 +282,14 @@ function CustomerPage() {
               : item
           }),
         )
-      }
-    } catch {
-      console.log('Menu API unavailable; using local menu.')
-    }
-  }
+      })
+      .catch(() => {
+        console.log('Menu API unavailable; using local menu.')
+      })
 
-  useEffect(() => {
-    loadMenu()
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   const availableMenu = menu.filter(
