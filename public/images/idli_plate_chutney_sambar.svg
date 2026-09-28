@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Idli">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b1f0f"/>
+      <stop offset="55%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#3b2b10"/>
+    </linearGradient>
+    <radialGradient id="plate" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#fff8dc"/>
+      <stop offset="100%" stop-color="#d9b85b"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="600" cy="350" r="250" fill="url(#plate)" opacity=".97" filter="url(#shadow)"/>
+  <circle cx="600" cy="350" r="218" fill="#18120b" opacity=".9"/>
+  <text x="600" y="425" text-anchor="middle" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif" font-size="250">🍚</text>
+  <rect x="0" y="610" width="1200" height="190" fill="#0a0a0a" opacity=".92"/>
+  <text x="60" y="690" fill="#f5d86e" font-family="Arial, sans-serif" font-weight="700" font-size="66">Idli</text>
+  <text x="60" y="748" fill="#ffffff" opacity=".82" font-family="Arial, sans-serif" font-size="34">Soft &amp; Steamed</text>
+  </svg>
