@@ -107,42 +107,49 @@ const INITIAL_MENU: MenuItem[] = [
   {
     id: 'idli',
     name: 'Idli',
-    price: 40,
+    price: 50,
     image: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_300%2Ch_300%2Ce_grayscale%2Cc_fit/FOOD_CATALOG/IMAGES/CMS/2025/8/14/dd7c3954-1cc1-4cb7-bc1f-94654e90bcee_02e54d8b-edb5-44d6-bb62-204bbcf4808b.jpg',
     available: true,
   },
   {
     id: 'upma',
     name: 'Upma',
-    price: 40,
+    price: 50,
     image: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_300%2Ch_300%2Ce_grayscale%2Cc_fit/FOOD_CATALOG/IMAGES/CMS/2024/4/8/936a37db-fbb9-4f79-ac31-6e3b600fa186_7383c1e7-1b2e-4b71-984a-60217824a76c.jpg',
     available: true,
   },
   {
     id: 'vada',
     name: 'Vada',
-    price: 40,
+    price: 50,
     image: 'https://b.zmtcdn.com/data/pictures/chains/5/21919795/ae3289d833d28b60afb260a7164d8f0d.jpg',
     available: true,
   },
   {
     id: 'mysore-bajji',
     name: 'Mysore Bajji',
-    price: 40,
+    price: 50,
+    image: 'https://b.zmtcdn.com/data/pictures/chains/5/21919795/ae3289d833d28b60afb260a7164d8f0d.jpg',
+    available: true,
+  },
+  {
+    id: 'onion-bonda',
+    name: 'Onion Bonda',
+    price: 50,
     image: 'https://b.zmtcdn.com/data/pictures/chains/5/21919795/ae3289d833d28b60afb260a7164d8f0d.jpg',
     available: true,
   },
   {
     id: 'plain-dosa',
     name: 'Plain Dosa',
-    price: 40,
+    price: 50,
     image: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_300%2Ch_300%2Ce_grayscale%2Cc_fit/FOOD_CATALOG/IMAGES/CMS/2025/7/21/7c9d7beb-75cd-4f51-a7a8-b5ed276c4e1a_b740e5e5-b025-4cfe-80bd-495fd75b8b71.png_compressed',
     available: true,
   },
   {
     id: 'puri',
     name: 'Puri',
-    price: 40,
+    price: 50,
     image: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/FOOD_CATALOG/IMAGES/CMS/2025/8/26/bbf6e806-b642-4b19-98fe-7d25b982ff5e_fc7bcd00-ade3-4dcc-865c-a7a76ab9cde0.jpg_compressed',
     available: true,
   },
@@ -184,35 +191,35 @@ const INITIAL_MENU: MenuItem[] = [
   {
     id: 'upma-dosa',
     name: 'Upma Dosa',
-    price: 50,
+    price: 60,
     image: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_300%2Ch_300%2Ce_grayscale%2Cc_fit/FOOD_CATALOG/IMAGES/CMS/2025/7/21/7c9d7beb-75cd-4f51-a7a8-b5ed276c4e1a_b740e5e5-b025-4cfe-80bd-495fd75b8b71.png_compressed',
     available: true,
   },
   {
     id: 'rava-dosa',
     name: 'Rava Dosa',
-    price: 50,
+    price: 60,
     image: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_300%2Ch_300%2Ce_grayscale%2Cc_fit/FOOD_CATALOG/IMAGES/CMS/2025/7/21/7c9d7beb-75cd-4f51-a7a8-b5ed276c4e1a_b740e5e5-b025-4cfe-80bd-495fd75b8b71.png_compressed',
     available: true,
   },
   {
     id: 'onion-dosa',
     name: 'Onion Dosa',
-    price: 50,
+    price: 60,
     image: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_300%2Ch_300%2Ce_grayscale%2Cc_fit/FOOD_CATALOG/IMAGES/CMS/2025/7/21/7c9d7beb-75cd-4f51-a7a8-b5ed276c4e1a_b740e5e5-b025-4cfe-80bd-495fd75b8b71.png_compressed',
     available: true,
   },
   {
     id: 'masala-dosa',
     name: 'Masala Dosa',
-    price: 50,
+    price: 60,
     image: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto%2Cw_300%2Ch_300%2Ce_grayscale%2Cc_fit/FOOD_CATALOG/IMAGES/CMS/2025/7/21/7c9d7beb-75cd-4f51-a7a8-b5ed276c4e1a_b740e5e5-b025-4cfe-80bd-495fd75b8b71.png_compressed',
     available: true,
   },
   {
     id: 'pesara',
     name: 'Pesara',
-    price: 50,
+    price: 60,
     image: 'https://blog.swiggy.com/wp-content/uploads/2024/03/Pesarattu-1-1024x538.png',
     available: true,
   },
@@ -242,6 +249,8 @@ function App() {
 function CustomerPage() {
   const [menu, setMenu] = useState<MenuItem[]>(INITIAL_MENU)
   const [cart, setCart] = useState<CartItem[]>([])
+  const [menuSearch, setMenuSearch] = useState('')
+  const [menuCategory, setMenuCategory] = useState('All')
 
   const [customerName, setCustomerName] = useState('')
   const [phone, setPhone] = useState('')
@@ -289,12 +298,19 @@ function CustomerPage() {
   }
 
   useEffect(() => {
-    loadMenu()
+    const timer = window.setTimeout(() => { void loadMenu() }, 0)
+    return () => window.clearTimeout(timer)
   }, [])
 
-  const availableMenu = menu.filter(
-    (item) => item.available,
-  )
+  const availableMenu = menu.filter((item) => {
+    const name = item.name.toLowerCase()
+    const matchesSearch = name.includes(menuSearch.toLowerCase().trim())
+    const matchesCategory = menuCategory === 'All' ||
+      (menuCategory === 'Dosa' && name.includes('dosa')) ||
+      (menuCategory === 'Tiffins' && ['idli', 'vada', 'bajji', 'bonda', 'puri', 'upma'].some((word) => name.includes(word))) ||
+      (menuCategory === 'Specials' && ['pesara', 'ghee', 'paneer'].some((word) => name.includes(word)))
+    return item.available && matchesSearch && matchesCategory
+  })
 
   const cartTotal = useMemo(
     () =>
@@ -595,22 +611,12 @@ function CustomerPage() {
 
   return (
     <div className="app customer-page">
-      <header className="topbar">
-        <div>
-          <h1>KS Foods</h1>
-          <p>
-            Fresh • Fast • Telugu Tiffins
-          </p>
-        </div>
-
-        <a
-          className="owner-link"
-          href="/foodtruck/owner"
-        >
-          Owner
-        </a>
+      <header className="topbar premium-topbar">
+        <a className="premium-brand" href="/foodtruck/"><span className="premium-logo">🚚</span><span><strong>KS <em>FOODS</em></strong><small>Fresh South Indian Tiffins</small></span></a>
+        <nav className="premium-nav"><a href="#menu">Menu</a><a href="#order">Order Now</a><span>Pickup · 7 AM – 12 PM</span></nav>
+        <a className="owner-link" href="/foodtruck/owner">Owner</a>
       </header>
-
+      <section className="premium-hero"><div className="premium-hero-inner"><span className="premium-eyebrow">✦ FRESHLY MADE EVERY MORNING</span><h1>South Indian <span>Breakfast,</span><br/>Made with Love.</h1><p>Golden crispy dosas, fluffy idli and your favourite tiffins. Order online and pick up fresh.</p><div className="premium-hero-actions"><a href="#menu" className="premium-primary">Explore Our Menu →</a><a href="#order" className="premium-secondary">Order for Pickup</a></div><div className="premium-trust"><span>✓ Freshly prepared</span><span>✓ Pickup only</span><span>✓ Cash & UPI</span></div></div></section>
       <main>
         <section className="customer-details panel">
           <h2>Customer Details</h2>
@@ -637,16 +643,17 @@ function CustomerPage() {
           </div>
         </section>
 
-        <section className="menu-section">
+        <section className="menu-section" id="menu">
           <div className="section-header">
             <div>
-              <h2>KS Foods Menu</h2>
+              <h2>Explore Our Menu</h2>
               <p>
                 {selectedCount} selected
               </p>
             </div>
           </div>
 
+          <div className="premium-menu-tools"><div className="premium-categories">{['All', 'Dosa', 'Tiffins', 'Specials'].map((category) => <button key={category} type="button" className={menuCategory === category ? 'active' : ''} onClick={() => setMenuCategory(category)}>{category}</button>)}</div><input aria-label="Search menu" placeholder="⌕  Search your favourites..." value={menuSearch} onChange={(event) => setMenuSearch(event.target.value)} /></div>
           <div className="menu-grid">
             {availableMenu.map((item) => {
               const quantity =
@@ -728,7 +735,7 @@ function CustomerPage() {
         </section>
 
         <form
-          className="order-panel panel"
+          className="order-panel panel" id="order"
           onSubmit={submitOrder}
         >
           <div className="section-header">
