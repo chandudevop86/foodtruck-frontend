@@ -35,7 +35,7 @@ Use a scheduled GitHub Actions workflow to check dependency/security updates, ru
 5. Test with an authorized test recipient, then configure business profile, message templates and production permissions.
 
 ## Confirmed menu pricing (2026-10-24)
-- ₹50: Idli, Vada, Mysore Bonda, Onion Bonda, Puri, Plain Dosa.
+- ₹50: Idli, Vada, Mysore Bonda, Onion Bonda, Puri, Upma, Plain Dosa.
 - ₹60: Other dosa varieties (subject to explicit per-item overrides).
-- Upma and any other non-dosa dishes not named above: price unconfirmed; do not automatically apply ₹60 or publish until owner confirms.
+- Any other non-dosa dishes not named above: price unconfirmed; do not automatically apply ₹60 or publish until owner confirms.
 - Prices must be stored server-side, versioned, and revalidated at checkout.
