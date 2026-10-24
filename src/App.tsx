@@ -296,7 +296,8 @@ function CustomerPage() {
   }
 
   useEffect(() => {
-    loadMenu()
+    const timer = window.setTimeout(() => { void loadMenu() }, 0)
+    return () => window.clearTimeout(timer)
   }, [])
 
   const availableMenu = menu.filter(
