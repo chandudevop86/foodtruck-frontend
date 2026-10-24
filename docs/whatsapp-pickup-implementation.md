@@ -33,3 +33,9 @@ Use a scheduled GitHub Actions workflow to check dependency/security updates, ru
 3. Set callback to `https://YOUR_DOMAIN/foodtruck-api/whatsapp/webhook`, create a private verify token and subscribe to messages.
 4. Configure a system-user access token with appropriate WhatsApp permissions; store secrets in server environment, never Git.
 5. Test with an authorized test recipient, then configure business profile, message templates and production permissions.
+
+## Confirmed menu pricing (2026-10-24)
+- ₹50: Idli, Vada, Mysore Bonda, Onion Bonda, Puri, Plain Dosa.
+- ₹60: Other dosa varieties (subject to explicit per-item overrides).
+- Upma and any other non-dosa dishes not named above: price unconfirmed; do not automatically apply ₹60 or publish until owner confirms.
+- Prices must be stored server-side, versioned, and revalidated at checkout.
